@@ -1,0 +1,10 @@
+hashbot/*
+target/*
+nbactions.xml
+nb-configuration.xml
+*.log
+*.js
+strategies
+strategies/*
+runme/*
+deploy.sh
