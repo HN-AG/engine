@@ -14,8 +14,7 @@ import org.apache.commons.codec.binary.Hex;
 
 public class AntPoolAPI {
     private static final Logger log = Logger.getLogger(HashNestAPI.class.getSimpleName());
-    private static final String baseURL = "https://antpool.com/api";
-    private final String apiKey, apiSecret, apiUserName;
+    private final String baseURL, apiKey, apiSecret, apiUserName;
     
     private static class Endpoints{
         public static final String POOLSTATS = "/poolStats.htm";
@@ -25,6 +24,13 @@ public class AntPoolAPI {
         this.apiKey = Main.getPref("ANTPOOLAPIKEY");
         this.apiSecret = Main.getPref("ANTPOOLAPISECRET");
         this.apiUserName = Main.getPref("ANTPOOLUSERNAME");
+        
+        if(Main.getPref("ANTPOOLAPIURL").isEmpty()){
+            this.baseURL = "https://antpool.com/api";
+        } else {
+            this.baseURL = Main.getPref("ANTPOOLAPIURL");
+        }
+        
         if(apiKey.isEmpty() || apiSecret.isEmpty()){
             Main.oops("Missing apikey or api secret");
         }

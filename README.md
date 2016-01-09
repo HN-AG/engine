@@ -77,6 +77,7 @@ java -Djsse.enableSNIExtension=false -jar hashbuddy.jar \
 --HASHNESTAPIUSERNAME=yourname \
 --HASHNESTAPIKEY=changeme \
 --HASHNESTAPISECRET=changeme \
+--ANTPOOLAPIURL=changeme \
 --ANTPOOLAPIKEY=changeme \
 --ANTPOOLAPISECRET=changeme \
 --ANTPOOLUSERNAME=changeme \
@@ -103,9 +104,12 @@ This is the information you need to connect up to the Hashnest API.
 It should be self explanatory, please use common sense, fill them out with the information you obtained earlier.
 
 Next is the Antpool section, this information will be different than the information from Hashnest, but the concept is the same.
+--ANTPOOLAPIURL=changeme
 --ANTPOOLAPIKEY=changeme 
 --ANTPOOLAPISECRET=changeme 
 --ANTPOOLUSERNAME=changeme
+
+The official and default ANTPOOLAPIURL is https://antpool.com/api but it can't be used as of January, 2016. You can use MAAAPI instead by using the URL http://maaapi.mooo.com/api and registering your ANTPOOLAPIKEY at http://maaapi.mooo.com/info/ (if you want HTTPS you will need to accept the self-signed certificate)
 
 Next up is your choice of strategy.
 The strategy you choose is entirely up to you, it defaults to main.js which does nothing other than say hello and then go back to sleep.
